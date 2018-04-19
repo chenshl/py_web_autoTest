@@ -20,5 +20,5 @@ class BaiduCase(unittest.TestCase):
 
     def tearDown(self):
         driver = self.driver
-        sleep(10)
+        sleep(3)
         driver.quit()
