@@ -5,7 +5,8 @@
 # 测试用例
 
 import unittest
-from Pages.changqing_firstPage import changqing_firstPage
+from Pages.changqing_HomePage import changqing_HomePage
+from Pages.changqing_integral_SearchPage import changqing_integral_SearchPage
 from BaseSe.Selenium2 import Pyse
 import Data.changqing_data as cqdata
 from time import sleep
@@ -25,9 +26,10 @@ class ChangqingCase(unittest.TestCase):
     # 测试用例
     def test_changqing1(self):
         # Page继承自Pyse的构造方法
-        changqing = changqing_firstPage(self.driver, self.url, self.title)
+        changqing = changqing_HomePage(self.driver, self.url, self.title)
         changqing.open()
         changqing.open_search()
+        changqing = changqing_integral_SearchPage(self.driver, self.url, self.title)
         changqing.search_goods(cqdata.StrXlsx())
         changqing.click_search_button()
 

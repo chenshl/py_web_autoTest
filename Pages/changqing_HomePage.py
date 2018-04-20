@@ -9,15 +9,12 @@ from BaseSe.Selenium2 import Pyse
 from selenium.webdriver.common.keys import Keys
 import selenium.webdriver.common.action_chains as swcac
 
-class changqing_firstPage(Pyse):
+class changqing_HomePage(Pyse):
 
     """定位器"""
     # 窝商城首页搜索框
     jfsc_search = (By.XPATH, '//div[@class="jfsc-search"]')
-    # 搜索框输入
-    search_into = (By.XPATH, '//input[@id="searchKey"]')
-    # 搜索按钮
-    search_btn = (By.XPATH, '//span[@class="search-btn"]')
+
 
 
     #操作
@@ -31,13 +28,7 @@ class changqing_firstPage(Pyse):
     def open_search(self):
         self.find_element(*self.jfsc_search).click()
 
-    # 搜索商品
-    def search_goods(self, text):
-        self.find_element(*self.search_into).send_keys(text)
 
-    # 点击搜索按钮
-    def click_search_button(self):
-        self.find_element(*self.search_btn).click()
 
 
 
